@@ -14,7 +14,6 @@ func main() {
 	fmt.Println("A random number will be drawn. It's an integer between 0 and 100")
 
 	x := rand.Int64N(101)
-	x = 10
 	// Create a scanner that reads from Stdin(OS reader)
 	scanner := bufio.NewScanner(os.Stdin)
 	guesses:= [10]int64{}
@@ -44,6 +43,8 @@ func main() {
 				"Take a look at your attemps: %v",
     			x, i+1, guesses[:i],
 			)
+			fmt.Println("\nPress Enter to leave...")
+			scanner.Scan() // Wait for user to press Enter
 			return
 		}
 
